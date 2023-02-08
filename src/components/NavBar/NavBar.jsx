@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./NavBar.module.css";
 import SearchBar from "../SearchBar/SearchBar";
 
-export default function NavBar() {
+export default function NavBar(props) {
   return (
     <div className={styles.navBar}>
     <nav>
-      <SearchBar onSearch={(characterID) => window.alert(characterID)} />
+      <SearchBar onSearch={props.onSearch} />
     </nav>
     </div>
   );
