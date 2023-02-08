@@ -1,75 +1,80 @@
 .styleCard {
-    border-radius: 8px;
-    box-shadow: 0px 0px 8px #ccc;
-    color: #0e1c2e;
-    margin: 12px 0px;
-    background-color: #ccc;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .styleCardContent {
-    padding: 4px 16px 20px 16px;
-  }
-  
-  .styleImage {
-    background-color: lightGray;
-    border-radius: 8px 8px 0 0;
-    width: 100%
-  }
-  
-  .styleCardTitle {
-    font-family: Avenir-Heavy;
-    font-size: 20;
-    font-weight: 600;
-    margin: 12px 0px 0px 0px;
-    justify-content: center;
-  }
-  
-  .styleLocationLabel {
-    color: #455466;
-    font-size: 14;
-    margin: 4px 0;
-  }
-  
-  .styleDescription {
-    font-size: 14;
-    margin: 8px 0 0 0;
-  }
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px rgb(97, 97, 97);
+  color: #0e1c2e;
+  margin: 12px 0px;
+  background-color: #ccc;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all .2s ease-in-out;
+}
 
-  .botonDiv {
-    display: flex;
-    justify-content: flex-end;
+.styleCard:hover {
+  box-shadow: 0px 0px 8px rgb(156, 156, 156);
+  transform: translate(0, -5px);
+}
+
+.styleCardContent {
+  padding: 0px 16px 20px 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.styleCardContentUp {
+  padding: 0px 16px 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.styleImage {
+  background-color: lightGray;
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+}
+
+.styleCardTitle {
+  font-family: Avenir-Heavy;
+  font-size: 20;
+  font-weight: 600;
+  margin: 12px 0px 0px 0px;
+  justify-content: center;
+}
+
+.styleLocationLabel {
+  color: #455466;
+  font-size: 14;
+  margin: 8px 0 0 0;
+}
+
+.styleDescription {
+  font-size: 14;
+  margin: 8px 0 0 0;
+}
+
+.botonDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin: 17px 0px 0px 0px;
 }
 
 .boton {
-    background-color: #ccc;
-    border: 5px;
-    color: rgb(0, 0, 0);
-    width: fit-content;
-    border-radius: 10%;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 120%;
+  background-color: rgb(216, 46, 46);
+  color: rgb(216, 46, 46);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 5px;
+  border-color: #ccc;
 }
 
 .boton:hover {
-    background-color: #00000060;
-    border: 2px;
-    color: white;
-    border-radius: 10%;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 120%;
-    box-shadow: 0px 0px 8px rgb(128, 128, 128);
+  background-color: rgb(199, 43, 43);
+  color: red;
+  box-shadow: 0px 0px 8px rgb(97, 97, 97);
 }
 /* .cardDiv {
     display: flex;

@@ -4,10 +4,9 @@ import React from "react";
 export default function Card(props) {
   return (
     <div className={styles.styleCard}>
-      <div className={styles.styleCardContent}>
+      <div className={styles.styleCardContentUp}>
       <div className={styles.botonDiv}>
         <button className={styles.boton} onClick={props.onClose}>
-          X
         </button>
       </div>
         <p className={styles.styleCardTitle}>{props.name}</p>
