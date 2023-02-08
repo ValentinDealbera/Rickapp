@@ -21,19 +21,3 @@ export default function Card(props) {
     </div>
   );
 }
-
-{
-  /* <div className={styles.cardDiv}>
-<div className={styles.botonDiv}>
-<button className={styles.boton} onClick={props.onClose}>X</button>
-</div>
-<div className={styles.nameDiv}>
-<p className={styles.name}>{props.name}</p>
-</div>
-<img src={props.image} alt='' />
-<div className={styles.bottomDiv}>
-<p className={styles.name}>{props.species}</p>
-<p className={styles.name}>{props.gender}</p>
-</div>
-</div> */
-}

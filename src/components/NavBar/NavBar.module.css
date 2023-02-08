@@ -1,0 +1,8 @@
+.navBar {
+    background-color: #ccc;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 5px;
+}
