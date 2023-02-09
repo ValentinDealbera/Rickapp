@@ -5,7 +5,7 @@ export default function Cards(props) {
    const {characters} = props;
    return (<div className={styles.divGeneral}>
       {
-         characters.map((c, i) => <Card key={c.id} name={c.name} species={c.species} gender={c.gender} image={c.image} onClose={() => {props.onClose(c.id)}}/>)
+         characters.map((c, i) => <Card id={c.id} key={i} name={c.name} species={c.species} gender={c.gender} image={c.image} onClose={() => {props.onClose(c.id)}}/>)
       }
    </div>);
 }

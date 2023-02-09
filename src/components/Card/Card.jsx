@@ -1,6 +1,6 @@
 import styles from "./Card.module.css";
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 export default function Card(props) {
   return (
@@ -10,7 +10,9 @@ export default function Card(props) {
         <button className={styles.boton} onClick={props.onClose}>
         </button>
       </div>
+        <Link to={`/detail/${props.id}`}>
         <p className={styles.styleCardTitle}>{props.name}</p>
+        </Link>
       </div>
       <div className={styles.styleImage}>
         <img className={styles.styleImage} src={props.image} alt={props.name} />

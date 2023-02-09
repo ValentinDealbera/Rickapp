@@ -2,7 +2,9 @@ import './App.css'
 import Cards from './components/Cards/Cards.jsx'
 import NavBar from './components/NavBar/NavBar'
 import { useState } from 'react'
-
+import { Route, Routes } from 'react-router-dom'
+import About from './components/About/About'
+import Detail from './components/Detail/Detail'
 function App () {
 
   const [characters, setCharacters] = useState([])
@@ -26,11 +28,13 @@ function App () {
   }
 
   return (
-    <div className='App Bg' style={{ padding: '25px' }}>
+    <div className='App' style={{ padding: '25px' }}>
       <NavBar onSearch={onSearch} />
-      <div>
-        <Cards characters={characters} onClose={onClose}/>
-      </div>
+      <Routes>
+        <Route path='/about' element={<About />} />
+        <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>} />
+        <Route path='/detail/:detailId' element={<Detail />} />
+      </Routes>
     </div>
   )
 }
