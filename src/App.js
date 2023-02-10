@@ -2,12 +2,13 @@ import './App.css'
 import Cards from './components/Cards/Cards.jsx'
 import NavBar from './components/NavBar/NavBar'
 import { useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 function App () {
 
   const [characters, setCharacters] = useState([])
+  const navigate = useNavigate()
 
   const onSearch = (character) => {
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
@@ -15,6 +16,7 @@ function App () {
     .then((data) => {
        if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
+          navigate('/home')
        } else {
           window.alert('No hay personajes con ese ID');
        }

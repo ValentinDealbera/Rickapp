@@ -23,17 +23,21 @@ const Detail = () => {
         return setCharacter({});
       }, [detailId]);
     return (
+      <div>
         <div className={styles.detail}>
-            <h1>Name:{character?.name}</h1>
-            <h3>Status:{character?.status}</h3>
-            <h3>Specie:{character?.specie}</h3>
-            <h3>Gender:{character?.gender}</h3>
-            <h3>Origin:{character?.origin?.name}</h3>
+          <div className={styles.text}>
+            <h1>Name: {character?.name}</h1>
+            <h3>Status :{character?.status}</h3>
+            <h3>Specie: {character?.species}</h3>
+            <h3>Gender: {character?.gender}</h3>
+            <h3>Origin: {character?.origin?.name}</h3>
             <Link to={'/home'}>
-            <button>HOME</button>
+            <button className={styles.button}>Home</button>
             </Link>
-            <img src={character?.image} alt="" />
+          </div>
+            <img className={styles.img} src={character?.image} alt="" />
         </div>
+      </div>
     )
 }
 

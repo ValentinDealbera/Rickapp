@@ -1,8 +1,9 @@
 .searchBar{
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     margin-right: 20px;
     gap: 5px;
+
 }
 
 .button{
@@ -33,4 +34,16 @@
 .input{
     border-radius: 5px;
     border: none;
+}
+
+.buttonDiv{
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.divGeneral{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
