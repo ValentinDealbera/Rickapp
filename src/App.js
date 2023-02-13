@@ -17,9 +17,11 @@ function App () {
   
   const login = (userData) => {
     if (userData.password === password && userData.username === username) {
+      console.log(access);
       setAccess(true);
       navigate('/home');
   }
+    else window.alert('credenciales incorrectas')
 }
 
 const logout = () =>{
