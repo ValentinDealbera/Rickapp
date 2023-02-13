@@ -30,6 +30,7 @@ const Form = (props) => {
   const handleSubmit = () => {
     props.login()
   }
+  
   return (
     <form onSubmit={handleSubmit} className={style.form}>
       <label>Username</label>

@@ -7,7 +7,7 @@ export default function NavBar(props) {
     <div>
       <div className={styles.navBar}>
         <nav>
-          <SearchBar onSearch={props.onSearch} />
+          <SearchBar onSearch={props.onSearch} logout={props.logout} />
         </nav>
       </div>
     </div>

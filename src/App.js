@@ -22,11 +22,18 @@ function App () {
   }
 }
 
+const logout = () =>{
+  setAccess(false)
+  navigate('/login')
+}
+
   useEffect(()=>{
     !access && navigate('/login')
   }, [access])
 
   const onSearch = (character) => {
+    let arrId = characters.map(e => e.id)
+    if (!arrId.includes(character*1)){
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
     .then((response) => response.json())
     .then((data) => {
@@ -36,7 +43,8 @@ function App () {
        } else {
           window.alert('No hay personajes con ese ID');
        }
-    });
+    });}
+    else window.alert('Ese personaje ya esta en tu lista!')
   }
 
   const onClose = (id) => {
@@ -57,7 +65,7 @@ function App () {
   }
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <NavBar onSearch={onSearch} />
+      <NavBar onSearch={onSearch} logout={logout} />
       <Routes>
         <Route path='/about' element={<About />} />
         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>} />

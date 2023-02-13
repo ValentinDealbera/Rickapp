@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 export default function SearchBar(props) {
   const [character, setCharacter] = useState("");
-  console.log(character);
   const input = (evento) => {
     setCharacter(evento.target.value);
   };
@@ -20,6 +19,7 @@ export default function SearchBar(props) {
   return (
     <div className={styles.divGeneral}>
       <div className={styles.buttonDiv}>
+        <span onClick={props.logout} className={styles.button}>Log-Out</span>
         <Link to={"/about"}>
           <span className={styles.button}>About</span>
         </Link>
