@@ -19,9 +19,12 @@ export default function SearchBar(props) {
   return (
     <div className={styles.divGeneral}>
       <div className={styles.buttonDiv}>
-        <span onClick={props.logout} className={styles.button}>Log-Out</span>
+        <span onClick={props.logout} className={styles.logOut}>Log-Out</span>
         <Link to={"/about"}>
           <span className={styles.button}>About</span>
+        </Link>
+        <Link to={"/favorites"}>
+          <span className={styles.button}>Favorites</span>
         </Link>
         <Link to={"/home"}>
           <span className={styles.button}>Home</span>
