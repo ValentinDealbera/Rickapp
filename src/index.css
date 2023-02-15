@@ -5,8 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://wallpaperaccess.com/full/85334.jpg");
-  background-size: 100vh 100vh;
+  background-image: url("https://www.wallpaperflare.com/static/81/544/844/rick-and-morty-space-assorted-planets-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 code {

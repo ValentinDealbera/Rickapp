@@ -31,13 +31,6 @@ function Card(props) {
   return (
     <div className={styles.styleCard}>
       <div className={styles.styleCardContentUp}>
-      {
-        isFav ? (
-          <button className={styles.favButtonFav} onClick={handleFavorite}>❤️</button>
-        ) : (
-          <button className={styles.favButtonNoFav} onClick={handleFavorite}>♡ </button>
-        )
-      }
         <div className={styles.botonDiv}>
           <button className={styles.boton} onClick={props.onClose}></button>
         </div>
@@ -51,8 +44,15 @@ function Card(props) {
             className={styles.styleImage}
             src={props.image}
             alt={props.name}
-          />
+            />
         </Link>
+            {
+              isFav ? (
+                <button className={styles.favButtonFav} onClick={handleFavorite}>❤️</button>
+              ) : (
+                <button className={styles.favButtonNoFav} onClick={handleFavorite}>♡ </button>
+              )
+            }
       </div>
       <div className={styles.styleCardContent}>
         <p className={styles.styleLocationLabel}>{props.gender}</p>
