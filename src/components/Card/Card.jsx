@@ -48,7 +48,7 @@ function Card(props) {
         </Link>
             {
               isFav ? (
-                <button className={styles.favButtonFav} onClick={handleFavorite}>❤️</button>
+                <button className={styles.favButtonFav} onClick={handleFavorite}>♥</button>
               ) : (
                 <button className={styles.favButtonNoFav} onClick={handleFavorite}>♡ </button>
               )

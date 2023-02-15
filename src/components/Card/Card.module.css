@@ -94,12 +94,13 @@
 .favButtonFav{
   position: absolute;
   top: 2%;
-  left: 83%;
+  left: 82%;
   border: none;
   background-color: #ccc;
   border-radius: 5px;
-  padding: 3px;
-  font-size: 22px;
+  padding: 3px 7px;
+  font-size: 24px;
+  color: red;
 }
 
 .favButtonNoFav{
