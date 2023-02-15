@@ -44,7 +44,19 @@
   margin: 12px 0px 0px 0px;
   justify-content: center;
   text-decoration: none;
+  color: #0e1c2e;
 }
+.linkStyle{
+  color:#0e1c2e
+}
+.linkStyle:link,
+.linkStyle:visited,
+.linkStyle:hover,
+.linkStyle:active{
+  text-decoration: none;
+}
+
+
 
 .styleLocationLabel {
   color: #455466;

@@ -41,7 +41,7 @@ function Card(props) {
         <div className={styles.botonDiv}>
           <button className={styles.boton} onClick={props.onClose}></button>
         </div>
-        <Link to={`/detail/${props.id}`}>
+        <Link className={styles.linkStyle} to={`/detail/${props.id}`}>
           <p className={styles.styleCardTitle}>{props.name}</p>
         </Link>
       </div>
