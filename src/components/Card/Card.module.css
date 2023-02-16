@@ -98,9 +98,8 @@
   border: none;
   background-color: #ccc;
   border-radius: 5px;
-  padding: 3px 7px;
   font-size: 24px;
-  color: red;
+  color: rgb(216, 46, 46)
 }
 
 .favButtonNoFav{
