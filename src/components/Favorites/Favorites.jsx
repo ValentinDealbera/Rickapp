@@ -5,8 +5,15 @@ import { filterCards, orderCards } from "../../redux/actions"
 
 const Favorites = (props) => {
 
+    
+    const mapFavorites=()=>{
+        return props.myFavorites.map((e,i) => <Card id={e.id} key={i} name={e.name} species={e.species} gender={e.gender} image={e.image} onClose={() => {props.onClose(e.id)}}/>)
+        
+    }
+    
     const dispatch = useDispatch()
     const selectOrderHandler = (event) => {
+        dispatch(filterCards('None'))
         dispatch(orderCards(event.target.value))
     }
 
@@ -30,8 +37,8 @@ const Favorites = (props) => {
         </select>
         </div>
         <div className={style.favoritesDiv}>
-            {
-                props.myFavorites.map((e,i) => <Card id={e.id} key={i} name={e.name} species={e.species} gender={e.gender} image={e.image} onClose={() => {props.onClose(e.id)}}/>)
+            {   
+                mapFavorites()
             }
         </div>
     </div>
