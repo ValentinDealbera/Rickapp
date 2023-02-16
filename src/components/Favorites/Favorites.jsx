@@ -16,12 +16,12 @@ const Favorites = (props) => {
     return (
     <div>
         <div>
-        <select onChange={selectOrderHandler} name='' id=''>
+        <select onChange={selectOrderHandler} >
         <option value="order" disabled='disabled'>Order by</option>
         <option value="ascendente">Ascendente</option>
         <option value="descendente">Descendente</option>  
         </select>
-        <select onChange={selectFilterHandler} name='' id='' >
+        <select onChange={selectFilterHandler} >
         <option value="filter" disabled='disabled'>Filter by</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
