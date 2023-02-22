@@ -26,7 +26,7 @@ function App () {
 }
 
 const logout = () =>{
-  setAccess(true)
+  setAccess(false)
   navigate('/login')
 }
 
@@ -67,6 +67,7 @@ const logout = () =>{
     </div>
     )
   }
+  
   return (
     <div className='App' style={{ padding: '25px' }}>
       <NavBar onSearch={onSearch} logout={logout} />
