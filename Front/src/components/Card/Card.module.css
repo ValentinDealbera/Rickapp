@@ -1,0 +1,114 @@
+.styleCard {
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px rgb(97, 97, 97);
+  color: #0e1c2e;
+  margin: auto;
+  background-color: #ccc;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all .2s ease-in-out;
+}
+
+.styleCard:hover {
+  box-shadow: 0px 0px 8px rgb(156, 156, 156);
+  transform: translate(0, -5px);
+}
+
+.styleCardContent {
+  padding: 0px 16px 20px 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.styleCardContentUp {
+  padding: 0px 16px 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.styleImage {
+  background-color: lightGray;
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  position: relative;
+}
+
+.styleCardTitle {
+  font-family: Avenir-Heavy;
+  font-size: 20;
+  font-weight: 600;
+  margin: 12px 0px 0px 0px;
+  justify-content: center;
+  text-decoration: none;
+  color: #0e1c2e;
+}
+.linkStyle{
+  color:#0e1c2e
+}
+.linkStyle:link,
+.linkStyle:visited,
+.linkStyle:hover,
+.linkStyle:active{
+  text-decoration: none;
+}
+
+
+
+.styleLocationLabel {
+  color: #455466;
+  font-size: 14;
+  margin: 8px 0 0 0;
+}
+
+.styleDescription {
+  font-size: 14;
+  margin: 8px 0 0 0;
+}
+
+.botonDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin: 17px 0px 0px 0px;
+}
+
+.boton {
+  background-color: rgb(216, 46, 46);
+  color: rgb(216, 46, 46);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 5px;
+  border-color: #ccc;
+}
+
+.boton:hover {
+  background-color: rgb(199, 43, 43);
+  color: red;
+  box-shadow: 0px 0px 8px rgb(97, 97, 97);
+}
+
+.favButtonFav{
+  position: absolute;
+  top: 2%;
+  left: 82%;
+  border: none;
+  background-color: #ccc;
+  border-radius: 5px;
+  font-size: 24px;
+  color: rgb(216, 46, 46)
+}
+
+.favButtonNoFav{
+  position: absolute;
+  top: 2%;
+  left: 82%;
+  border: none;
+  background-color: rgb(46, 46, 46);
+  border-radius: 5px;
+  color: white;
+  font-size: 24px;
+}
