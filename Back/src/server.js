@@ -4,14 +4,12 @@ const characters = require("./utils/data");
 http
   .createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    if (
-      req.url.split("/")[1] + "/" + req.url.split("/")[2] ===
-      "rickandmorty/character"
-    ) {
-      const id = req.url.split("/")[3];
-      if (characters[id]) {
+    if (req.url.includes("rickandmorty/character")) {
+      const id = req.url.split("/").at(-1);
+      const characterFilter = characters.filter(char => char.id === Number(id))
+      if (characterFilter.length >= 1) {
         res.writeHead(200, { "Content-Type": "application/json" });
-        res.end(JSON.stringify(characters[id - 1]));
+        res.end(JSON.stringify(characterFilter[0]));
       } else {
         res.writeHead(404, { "Content-Type": "text/plain" });
         res.end("character not found");

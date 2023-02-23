@@ -41,12 +41,13 @@ const logout = () =>{
     fetch(`http://localhost:3001/rickandmorty/character/${character}`)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data.name)
        if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
           navigate('/home')
-       } else {
-          window.alert('No hay personajes con ese ID');
        }
+    }).catch(()=>{
+      window.alert('No hay personajes con ese ID');
     });}
     else window.alert('Ese personaje ya esta en tu lista!')
   }
