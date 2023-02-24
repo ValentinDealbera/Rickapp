@@ -38,7 +38,7 @@ const logout = () =>{
   const onSearch = (character) => {
     let arrId = characters.map(e => e.id)
     if (!arrId.includes(character*1)){
-    fetch(`http://localhost:3001/rickandmorty/character/${character}`)
+    fetch(`http://localhost:3001/rickandmorty/onsearch/${character}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data.name)
