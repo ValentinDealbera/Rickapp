@@ -5,7 +5,6 @@ let favs = require('../utils/favs')
 
 
 favRouter.post('/post', (req,res)=>{
-    console.log(req.body);
     const {id, name, species, gender, image} = req.body
     const obj = {
         id,

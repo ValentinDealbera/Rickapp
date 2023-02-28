@@ -18,8 +18,10 @@ const Favorites = (props) => {
         dispatch(orderCards(event.target.value))
     }
     useEffect(()=>{
-        return ()=>{ dispatch(filterCards('none')),
-        dispatch(orderCards('ascendente'))}
+        return ()=>{ dispatch(filterCards('none'))
+        dispatch(orderCards('ascendente'))
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     const selectFilterHandler = (event) => {
