@@ -1,29 +1,21 @@
-var fetch = require("node-fetch");
-const getCharDetail = (res, id) => {
-  fetch(`https://rickandmortyapi.com/api/character/${id}`)
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.name) {
-        const aux = {
-          id: data.id,
-          image: data.image,
-          name: data.name,
-          gender: data.gender,
-          species: data.species,
-          status: data.status,
-          origin: data.origin,
-        };
-        res.writeHead(200, { "Content-Type": "application/json" });
-        res.end(JSON.stringify(aux));
-      } else {
-        res.writeHead(404, { "Content-Type": "text/plain" });
-        res.end("Character not Found");
-      }
-    })
-    .catch((err) => {
-      res.writeHead(500, { "Content-Type": "text/plain" });
-      res.end(err);
-    });
-};
+const URL = "https://rickandmortyapi.com/api/character/";
+const axios = require('axios')
+function getCharDetail(req, res) {
+  const { detailId } = req.params;
+  axios(URL + detailId)
+  .then(response => {
+    const character = {
+      id: response.data.id,
+      name: response.data.name,
+      species: response.data.species,
+      image: response.data.image,
+      gender: response.data.gender,
+      origin: response.data.origin,
+    }
+    res.status(200).json(character)
+  })
+  .catch(err => res.status(404).send(err.message))
+  
+}
 
 module.exports = getCharDetail;

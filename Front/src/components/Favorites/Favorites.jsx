@@ -2,6 +2,7 @@ import { connect, useDispatch } from "react-redux"
 import Card from "../Card/Card"
 import style from './Favorites.module.css'
 import { filterCards, orderCards } from "../../redux/actions"
+import { useEffect } from "react"
 
 const Favorites = (props) => {
 
@@ -16,6 +17,10 @@ const Favorites = (props) => {
         dispatch(filterCards('None'))
         dispatch(orderCards(event.target.value))
     }
+    useEffect(()=>{
+        return ()=>{ dispatch(filterCards('none')),
+        dispatch(orderCards('ascendente'))}
+    },[])
 
     const selectFilterHandler = (event) => {
         dispatch(filterCards(event.target.value))

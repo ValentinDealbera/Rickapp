@@ -1,15 +1,13 @@
-const http = require('http')
-const getCharById = require('./controllers/getCharById');
-const getCharDetail = require('./controllers/getCharDetail');
+const express = require('express')
+const server = express()
+const PORT = 3001
+const router = require('./routes/index')
+const cors = require('cors')
+const favsRouter = require('./routes/favsRouter')
 
-http.createServer((req, res)=>{
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  if (req.url.includes('onsearch')){
-    const id = req.url.split('/').at(-1)
-    getCharById(res, id)
-  }
-  if (req.url.includes('detail')){
-    const id = req.url.split('/').at(-1)
-    getCharDetail(res, id)    
-  }
-}).listen(3001, 'localhost')
+server.use(express.json())
+server.use(cors())
+server.use('/rickandmorty', router)
+server.use('/favs', favsRouter)
+
+server.listen(PORT, console.log('listening on port 3001'))
