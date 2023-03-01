@@ -32,6 +32,7 @@ const logout = () =>{
 
   useEffect(()=>{
     !access && navigate('/login')
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [access])
 
   const onSearch = (character) => {
