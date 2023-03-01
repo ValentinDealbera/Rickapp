@@ -5,25 +5,21 @@ const FILTER = "FILTER";
 const ORDER = "ORDER";
 
 const addFavorites = (personaje) => {
-  return function (dispatch) {
-    axios
-      .post("http://localhost:3001/favs/post", personaje)
-      .then((response) => {
+  return async function (dispatch) {
+    const response = await axios.post("http://localhost:3001/favs/post", personaje)
         console.log(response.data);
         return dispatch({
           type: ADD_FAVORITES,
           payload: response.data,
         });
-      });
   };
 }
 
 const deleteFavorites = (id) => {
-  return function (dispatch) {
-    axios.delete("http://localhost:3001/favs/delete/" + id).then((response) => {
+  return async function (dispatch) {
+    const response = await axios.delete("http://localhost:3001/favs/delete/" + id)
       return dispatch({ type: DELETE_FAVORITES, payload: response.data});
-    });
-  };
+    };
 };
 
 const filterCards = (gender) => {

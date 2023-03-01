@@ -25,8 +25,15 @@ function Card(props) {
       props.deleteFavorites(props.id)
     }
     else {
+      const obj = {
+        id: props.id,
+        name: props.name,
+        species: props.species,
+        gender: props.gender,
+        image: props.image
+      }
       setIsFav(true)
-      props.addFavorites(props)
+      props.addFavorites(obj)
     }
   }
 
