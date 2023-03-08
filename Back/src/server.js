@@ -10,4 +10,4 @@ server.use(cors())
 server.use('/rickandmorty', router)
 server.use('/favs', favsRouter)
 
-server.listen(PORT, console.log('listening on port 3001'))
+module.exports = server
