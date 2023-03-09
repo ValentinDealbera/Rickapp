@@ -1,10 +1,9 @@
 const {Router} = require('express')
 const favRouter = Router()
-let favs = require('../utils/favs')
+const {favorites} = require('../DB_connection')
 
 
-
-favRouter.post('/post', (req,res)=>{
+favRouter.post('/post', async (req,res)=>{
     const {id, name, species, gender, image} = req.body
     const obj = {
         id,
@@ -13,16 +12,22 @@ favRouter.post('/post', (req,res)=>{
         gender,
         image
     }
-    favs.push(obj)
-    res.status(201).json(favs)
+    await favorites.create(obj)
+    res.status(201).json(favorites)
 })
-favRouter.get('/get', (req, res)=>{
+favRouter.get('/get', async (req, res)=>{
+    const favs = await favorites.findAll()
     return res.json(favs)
 })
-favRouter.delete('/delete/:id', (req, res)=>{
+favRouter.delete('/delete/:id', async (req, res)=>{
     const {id} = req.params
-    favs = favs.filter(pj => pj.id !== Number(id))
-    res.json(favs)
+    await favorites.destroy({
+        where: {
+            id: id
+        }
+    })
+    const newFavs = await favorites.findAll()
+    res.json(newFavs)
 })
 
 module.exports = favRouter
