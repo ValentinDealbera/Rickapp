@@ -7,7 +7,6 @@ const ORDER = "ORDER";
 const addFavorites = (personaje) => {
   return async function (dispatch) {
     const response = await axios.post("http://localhost:3001/favs/post", personaje)
-        console.log(response.data);
         return dispatch({
           type: ADD_FAVORITES,
           payload: response.data,

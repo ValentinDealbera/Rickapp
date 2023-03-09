@@ -13,7 +13,8 @@ favRouter.post('/post', async (req,res)=>{
         image
     }
     await favorites.create(obj)
-    res.status(201).json(favorites)
+    const newFavs = await favorites.findAll()
+    res.status(201).json(newFavs)
 })
 favRouter.get('/get', async (req, res)=>{
     const favs = await favorites.findAll()
