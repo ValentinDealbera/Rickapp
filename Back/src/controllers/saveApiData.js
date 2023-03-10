@@ -33,7 +33,7 @@ const saveApiData = async () => {
         const allCharacters = await getApiData()
         await character.bulkCreate(allCharacters)
     } catch (error) {
-        throw new Error({error: error.message})
+        throw new Error(error.message)
     }
 }
 
